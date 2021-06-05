@@ -30,7 +30,7 @@ class Home extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.blue,
                     fontSize: 48,
-                    // fontFamily: "simplified-arabic",
+                    fontFamily: "uthmanic",
                   ),
                 ),
                 TextSpan(
@@ -38,7 +38,7 @@ class Home extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.red,
                     fontSize: 48,
-                    // fontFamily: "simplified-arabic",
+                    fontFamily: "uthmanic",
                   ),
                 ),
                 TextSpan(
@@ -46,19 +46,41 @@ class Home extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.blue,
                     fontSize: 48,
-                    // fontFamily: "simplified-arabic",
+                    fontFamily: "uthmanic",
                   ),
                 ),
               ]),
             ),
             Text.rich(
-              TextSpan(text: "كَُـ"),
+              TextSpan(children: [
+                TextSpan(
+                  text: "كَُ",
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontSize: 48,
+                    fontFamily: "uthmanic",
+                  ),
+                ),
+                TextSpan(
+                  text: "ـ",
+                  style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: 48,
+                    fontFamily: "uthmanic",
+                  ),
+                ),
+              ]),
               style: TextStyle(
-                color: Colors.blue,
-                fontSize: 48,
-                // fontFamily: "simplified-arabic"و
-              ),
+                  color: Colors.blue, fontSize: 48, fontFamily: "uthmanic"),
             ),
+            Text(
+              "ِّمُِ ",
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 48,
+                fontFamily: "uthmanic",
+              ),
+            )
           ],
         ),
       ),
