@@ -1,16 +1,20 @@
 # arabic_diacritics_test
 
-A new Flutter project.
+A new Flutter project showing the issue with Arabic diacritics rendering.
 
-## Getting Started
+![inApp-Image](https://i.imgur.com/4kSKwrc.jpg)
 
-This project is a starting point for a Flutter application.
+## Walkthrough
 
-A few resources to get you started if this is your first Flutter project:
+The app has a `Column` with three children to show different usage of diacritics with `TextSpan`.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+1. The first line is when the diacritics are in a separate `TextSpan` it gets displayed like it is on its own (like how `TextSpan` should be treated but it doesn't work like that in Arabic context, the previous letter should be taken into account).
+1. If the diacritics are in a `TextSpan` with a letter that they should be displayed on they get displayed correctly.
+1. Using a `Text` widget with diacritics on a letter (first part) gets displayed correctly, and diacritics on their own (second part) they get displayed on baseline (which is correct in this case) like the diacritics in the first line with a single difference is in the first line there is a letter actually before the diacritics so they shouldn't be displayed like that.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Conclusion
+Diacritics get treated correctly by Flutter but in Arabic context is important as even if they are on their own in the `TextSpan` they should care about their position in the sentence.
+
+The same is also applicable for some letters as they can be drawn differently depending on their place in a sentence or word but `TextSpan` doesn't always respect that, the underlined letter in the next picture is drawn longer than it should be when preceded with a `TextSpan` with different style.
+
+![incorrect-letter](https://i.imgur.com/AHwjjGI.png)
